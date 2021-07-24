@@ -11,6 +11,7 @@ class AdminController extends Controller
         if(Auth::check()){
             return redirect('home');
         }
+        // dd(bcrypt('1234'));//1234
         return view('login');
 
     }
