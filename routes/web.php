@@ -107,5 +107,51 @@ Route::prefix('admin')->group(function () {
             'uses'=>'AdminProductController@delete'
         ]);
     });
+
+    Route::prefix('slider')->group(function () {
+        Route::get('/', [
+            'as'=>'slider.index',
+            'uses'=>'AdminSliderController@index'
+        ]);
+        Route::get('/create', [
+            'as'=>'slider.create',
+            'uses'=>'AdminSliderController@create'
+        ]);
+        Route::post('/store', [
+            'as'=>'slider.store',
+            'uses'=>'AdminSliderController@store'
+        ]);
+        Route::get('/edit/{id}', [
+            'as'=>'slider.edit',
+            'uses'=>'AdminSliderController@edit'
+        ]);
+        Route::post('/update/{id}', [
+            'as'=>'slider.update',
+            'uses'=>'AdminSliderController@update'
+        ]);
+        Route::get('/delete/{id}', [
+            'as'=>'slider.delete',
+            'uses'=>'AdminSliderController@delete'
+        ]);
+    });
+
+    Route::prefix('settings')->group(function () {
+        Route::get('/', [
+            'as'=>'settings.index',
+            'uses'=>'AdminSettingController@index'
+        ]);
+        Route::get('/create', [
+            'as'=>'settings.create',
+            'uses'=>'AdminSettingController@create'
+        ]);
+        Route::post('/store', [
+            'as'=>'settings.store',
+            'uses'=>'AdminSettingController@store'
+        ]);
+        Route::get('/edit/{id}', [
+            'as'=>'settings.edit',
+            'uses'=>'AdminSettingController@edit'
+        ]);
+    });
 });
 
